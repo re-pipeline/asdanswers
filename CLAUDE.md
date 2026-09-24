@@ -6,7 +6,7 @@ A 1-page hub that links out to other websites for autism families. Plain static 
 **The person asking for changes (usually Alex) is not a programmer.** Use plain language, never show code unless asked, and just make the change. After each change, say in 1 or 2 sentences what changed and that it will be live on asdanswers.com in about 1 minute.
 
 ## How changes go live
-1. Code: `github.com/re-pipeline/asdanswers` (private), branch `main`. Owner: RE pipeline account (Dr. Bogner). Alex (`azaharakis1`) is a collaborator.
+1. Code: `github.com/re-pipeline/asdanswers` (public, so Vercel deploys everyone's commits on the free plan; never put secrets or private info in it), branch `main`. Owner: RE pipeline account (Dr. Bogner). Alex (`azaharakis1`) is a collaborator.
 2. Hosting: Vercel project `asdanswers`. **Every push to `main` deploys automatically.** Nothing else to run.
 3. On Claude Code on the web (claude.ai/code): commit the change and push it to `main` directly, unless the person asks for a review first. Do not leave work on a side branch; a side branch does NOT go live.
 4. Undo: revert the last commit and push. Vercel also keeps every past version (Deployments, "Promote").
