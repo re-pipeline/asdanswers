@@ -12,12 +12,21 @@ A 1-page hub that links out to other websites for autism families. Plain static 
 4. Undo: revert the last commit and push. Vercel also keeps every past version (Deployments, "Promote").
 
 ## Files
-- `index.html`: the whole site. Colors are at the top of the `<style>` block (`:root`, with a dark mode copy below it).
+- `index.html`: the home page. A hero, then 1 clickable oval per topic, each opening that topic's page.
+- Topic pages, 1 per oval: `aib.html`, `testing.html`, `bogner-health.html`, `testimonials.html`, `thioguard.html`, `gut-balancing.html`, `researched-elements.html`, `photobiomodulation.html`, `primitive-reflexes.html`, `cts.html`. Alex adds each page's content inside its `<div class="content">`.
+- `style.css`: shared look for the home page and topic pages. Colors are at the top (`:root`, with a dark mode copy below it).
+- `links.html`: the old 1-page link list, kept for reference (at `/links`, not linked from the home page, `noindex`). Has its own styles inside it.
 - `favicon.svg`: the browser tab icon.
 - `og.png`: the preview image shown when the link is shared in texts or social media.
 - `vercel.json`: hosting settings. Leave it alone.
 
-## How the page is organized
+### Adding a topic (oval)
+Copy an existing topic page to a new file, change its `<title>`, tag and `<h1>`, then add 1 `<li>` line for it in the `.ovals` list in `index.html`. To remove one, delete both.
+
+### Adding content to a topic page
+Replace the "Content coming soon." line with paragraphs, `<h2>` subheadings, and link cards. For link cards, wrap them in `<div class="cards">` and use the same card format described below.
+
+## How links.html (old link list) is organized
 - **Hero** (top): title, 1 sentence, and jump buttons to each section.
 - **Featured**: 3 big cards (Autism is Biomedical, Bogner Health, GutBalancing).
 - **Sections**, each marked by a comment `<!-- === SECTION: Name === -->`: Testing, Learn, Family stories, Products and care, Follow.
@@ -36,4 +45,5 @@ Copy a whole `<section class="group">` block, give it a new `id`, and add a matc
 - No patient names, patient files or private groups on this public page.
 - Writing style: US spelling, no em or en dashes, numerals for numbers.
 - The page must keep working on phones (check that nothing is wider than the screen) and in dark mode.
-- Keep it 1 static file. No frameworks, trackers or pop-ups without asking Dr. Bogner.
+- Keep it plain static HTML and CSS, no build step. No frameworks, trackers or pop-ups without asking Dr. Bogner.
+- Links between pages use relative `.html` addresses (like `aib.html`). Vercel shows them as clean addresses (`/aib`).
