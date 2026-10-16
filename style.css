@@ -94,6 +94,24 @@ a { color: inherit; text-decoration: none; }
 .content { max-width: 70ch; padding-top: 20px; }
 .content h2 { font-family: Fraunces, Georgia, serif; font-weight: 650; font-size: 1.7rem; margin: 40px 0 12px; }
 .content a:not(.card) { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+.content .cards + .table-wrap { margin-top: 20px; }
+.content .note { color: var(--muted); font-size: .9rem; }
+
+/* Study tables (Thioguard page) */
+.table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
+.studies { width: 100%; border-collapse: collapse; font-size: .92rem; line-height: 1.45; }
+.studies th, .studies td { text-align: left; vertical-align: top; padding: 12px 14px; border-bottom: 1px solid var(--line); }
+.studies tr:last-child td { border-bottom: 0; }
+.studies th { font-size: .78rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 600; }
+.studies td:first-child { font-weight: 600; color: var(--accent); white-space: nowrap; }
+.studies td:nth-child(2) { font-weight: 500; min-width: 11em; }
+@media (max-width: 560px) {   /* phones: stack each study instead of a wide table */
+  .studies thead { display: none; }
+  .studies tr { display: block; padding: 12px 14px; border-bottom: 1px solid var(--line); }
+  .studies tr:last-child { border-bottom: 0; }
+  .studies td { display: block; padding: 2px 0; border: 0; min-width: 0 !important; }
+}
+
 .soon {
   border: 2px dashed var(--line); border-radius: var(--radius); padding: 32px;
   color: var(--muted); text-align: center;
