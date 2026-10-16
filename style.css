@@ -97,6 +97,16 @@ a { color: inherit; text-decoration: none; }
 .content .cards + .table-wrap { margin-top: 20px; }
 .content .note { color: var(--muted); font-size: .9rem; }
 
+/* Screenshot gallery (CTS page) */
+.shots { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+.shots figure { margin: 0; }
+.shots img {
+  display: block; width: 100%; height: auto; border-radius: 12px;
+  border: 1px solid var(--line); box-shadow: 0 14px 30px -22px rgba(16,24,40,.5);
+}
+.shots figcaption { margin-top: 6px; font-size: .9rem; color: var(--muted); }
+.content .cards + h2 { margin-top: 44px; }
+
 /* Study tables (Thioguard page) */
 .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
 .studies { width: 100%; border-collapse: collapse; font-size: .92rem; line-height: 1.45; }
